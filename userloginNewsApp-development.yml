@@ -1,4 +1,6 @@
 spring:
+  profile:
+    active: development
   datasource:
     url: jdbc:mysql://localhost:3306/usersNewsAppDB?createDatabaseIfNotExist=true
     username: root
