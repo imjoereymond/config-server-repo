@@ -18,7 +18,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-server:8761/eureka
 jwt:
   secret: zq77pLk41JoeKLPmAtr5l7iUYtw3Hn7PvD7t3xB7uPGh
   message: Login Successful
