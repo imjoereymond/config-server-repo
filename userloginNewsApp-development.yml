@@ -2,8 +2,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/usersNewsAppDB?createDatabaseIfNotExist=true
     username: root
-    #password: J!4kLp#7qz
-    password: admin
+    password: J!4kLp#7qz
+    #password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
