@@ -2,19 +2,25 @@ server:
   port: 9093
 
 spring:
-  application:
-    name: api-gateway-svc
-#  cloud:
-#    gateway:
-#      routes:
-#      default-filters:
-#        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-#      globalcors:
-#        cors-configurations:
-#          '[/**]':
-#            allowed-origins: "*"
-#            allowedMethods: "*"
-#            allowedHeaders: "*"
+  cloud:
+    gateway:
+      routes:
+        - id: userlogin
+          uri: lb://userlogin
+          predicates:
+            - Path=/api/v1/user/**
+        - id: newsdetails
+          uri: lb://newsdetails
+          predicates:
+            - Path=/api/v1/news/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
 
 eureka:
   client:
@@ -23,13 +29,13 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761
 
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  security:
-    enabled: true
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  security:
+#    enabled: true
