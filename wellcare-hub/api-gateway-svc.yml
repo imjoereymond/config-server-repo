@@ -4,17 +4,17 @@ server:
 spring:
   application:
     name: api-gateway-svc
-  cloud:
-    gateway:
+#  cloud:
+#    gateway:
 #      routes:
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowed-origins: "*"
-            allowedMethods: "*"
-            allowedHeaders: "*"
+#      default-filters:
+#        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowed-origins: "*"
+#            allowedMethods: "*"
+#            allowedHeaders: "*"
 
 eureka:
   client:
